@@ -8,6 +8,8 @@ setup(
     url='https://github.com/jaysonsantos/django-uwsgi-mail',
     packages=['uwsgi_mail'],
     classifiers=[
-        "Development Status :: 4 - Beta",
+        'Development Status :: 4 - Beta',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
     ]
 )
