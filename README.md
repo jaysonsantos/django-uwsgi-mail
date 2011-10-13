@@ -1,4 +1,4 @@
-z# Django uWSGI Mail
+# Django uWSGI Mail
 
 A Django backend for e-mail delivery using uWSGI Spool to queue deliveries.
 
