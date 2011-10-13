@@ -1,4 +1,4 @@
-# Django uWSGI Mail
+z# Django uWSGI Mail
 
 A Django backend for e-mail delivery using uWSGI Spool to queue deliveries.
 
@@ -24,7 +24,7 @@ send_mail('Subject here', 'Here is the message.', 'from@example.com',
 By default the `django.core.mail.backends.smtp.EmailBackend` is used for the real e-mail delivery. You can change that using: 
 
 ```python
-EMAIL_BACKEND = 'your.backend.EmailBackend'
+UWSGI_EMAIL_BACKEND = 'your.backend.EmailBackend'
 ```
 
 ## Running the simple test
