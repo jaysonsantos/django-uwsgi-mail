@@ -10,6 +10,7 @@ from django.core.mail import get_connection
 BACKEND = getattr(settings, 'UWSGI_EMAIL_BACKEND',
     'django.core.mail.backends.smtp.EmailBackend')
 
+
 @spool
 def send_mail(arguments):
     conn = get_connection(backend=BACKEND)
