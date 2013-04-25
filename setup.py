@@ -1,7 +1,7 @@
 from setuptools import setup
 setup(
     name='django-uwsgi-mail',
-    version='1.0',
+    version='1.1',
     author='Jayson Reis',
     author_email='santosdosreis@gmail.com',
     description='A Django backend for e-mail delivery using uWSGI Spool to queue deliveries.',
