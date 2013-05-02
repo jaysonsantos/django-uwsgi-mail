@@ -19,5 +19,5 @@ class EmailBackend(BaseEmailBackend):
 
     def _send(self, email_message):
         from uwsgi_mail.task import send_mail
-        send_mail.spool(email_message=dumps(email_message, 2))
+        send_mail.spool(body=dumps(email_message, 2))
         return True
