@@ -8,7 +8,7 @@ from django.conf import settings
 from django.core.mail import get_connection
 
 BACKEND = getattr(settings, 'UWSGI_EMAIL_BACKEND',
-    'django.core.mail.backends.smtp.EmailBackend')
+                  'django.core.mail.backends.smtp.EmailBackend')
 
 
 @spool
