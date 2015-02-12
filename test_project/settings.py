@@ -144,5 +144,5 @@ LOGGING = {
     }
 }
 
-EMAIL_BACKEND='uwsgi_mail.uwsgi.EmailBackend'
+EMAIL_BACKEND = 'uwsgi_mail.uwsgi.EmailBackend'
 UWSGI_EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'

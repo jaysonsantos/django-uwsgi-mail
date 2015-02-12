@@ -1,5 +1,3 @@
-import os
-from django.conf import settings
 from django.core.mail.backends.base import BaseEmailBackend
 try:
     from cPickle import dumps
