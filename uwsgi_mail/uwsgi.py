@@ -2,10 +2,18 @@ from django.core.mail.backends.base import BaseEmailBackend
 try:
     from cPickle import dumps
 except ImportError:
-    from Pickle import dumps
+    from pickle import dumps
 
 
 class EmailBackend(BaseEmailBackend):
+    def __init__(self, *args, **kwargs):
+        _send_mail_task = kwargs.pop('send_mail_task', None)
+        if _send_mail_task:
+            self._send_mail_task = _send_mail_task
+        else:
+            from uwsgi_mail.task import send_mail
+            self._send_mail_task = send_mail
+
     def send_messages(self, email_messages):
         num_sent = 0
         if not email_messages:
@@ -16,6 +24,5 @@ class EmailBackend(BaseEmailBackend):
         return num_sent
 
     def _send(self, email_message):
-        from uwsgi_mail.task import send_mail
-        send_mail.spool(body=dumps(email_message, 2))
+        self._send_mail_task.spool(body=dumps(email_message, 2))
         return True
