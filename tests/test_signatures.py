@@ -1,15 +1,8 @@
 from __future__ import print_function
 
-try:
-    from cPickle import loads
-except ImportError:
-    from pickle import loads
+import mock
 
-try:
-    from unittest import mock
-except ImportError:
-    import mock
-
+from uwsgi_mail.compat import loads
 from uwsgi_mail.uwsgi import EmailBackend
 
 

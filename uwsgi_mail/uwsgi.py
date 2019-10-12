@@ -1,8 +1,6 @@
 from django.core.mail.backends.base import BaseEmailBackend
-try:
-    from cPickle import dumps
-except ImportError:
-    from pickle import dumps
+
+from uwsgi_mail.compat import dumps
 
 
 class EmailBackend(BaseEmailBackend):
